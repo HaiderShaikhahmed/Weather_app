@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="weather-card">
+      <div class="location-section">
+        <h1 class="app-title">Weather App</h1>
+
+        <!-- Search Section with Live Search Dropdown -->
+        <div class="search-container">
+          <input type="text" id="location-input" placeholder="Search for a location..." />
+          <button id="search-btn">Search</button>
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+      </div>
+
+      <div class="weather-info" id="weather-info">
+        <div id="weather-details">
+          <h2 id="city-name">Location: <span></span></h2>
+          <p id="condition">Condition: <span></span></p>
+          <p id="temp">Temperature: <span></span>°C</p>
+          <p id="humidity">Humidity: <span></span>%</p>
+          <p id="wind">Wind: <span></span> km/h</p>
+        </div>
+        <div id="weather-icon"></div>
+        <div id="sun-moon-icon"></div>
+      </div>
+
+      <div id="error-msg" class="error-msg"></div>
+    </div>
+
+    <!-- Weather Background -->
+    <div id="weather-background" class="weather-background"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

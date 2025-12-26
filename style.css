@@ -1,0 +1,231 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2b2b;
+  color: white;
+}
+
+/* Main App Container */
+.app-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Weather Card Styling */
+.weather-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.weather-card:hover {
+  transform: scale(1.05);
+}
+
+/* Title */
+.app-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ff9800;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Search Section */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Text Input for Custom Location */
+#location-input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ff9800;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+#location-input:hover {
+  background-color: #444;
+  border-color: #ff5722;
+}
+
+#location-input:focus {
+  outline: none;
+  border-color: #ff5722;
+  box-shadow: 0 0 10px #ff5722;
+}
+
+/* Suggestions Dropdown */
+.suggestions {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #444;
+  border-radius: 5px;
+  border: 1px solid #ff5722;
+  z-index: 5;
+  display: none;
+}
+
+.suggestions .suggestion-item {
+  padding: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ff5722;
+  transition: background-color 0.2s ease;
+}
+
+.suggestions .suggestion-item:hover {
+  background-color: #333;
+}
+
+/* Search Button */
+#search-btn {
+  padding: 12px 20px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#search-btn:hover {
+  background-color: #ff9800;
+}
+
+#search-btn:active {
+  background-color: #e64a19;
+}
+
+/* Weather Info Styling */
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+.weather-info p {
+  font-size: 18px;
+}
+
+.weather-info span {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+/* Weather Icon Styling */
+#weather-icon img {
+  width: 80px;
+  height: 80px;
+  margin-top: 15px;
+  transition: transform 0.3s ease;
+}
+
+#weather-icon img:hover {
+  transform: scale(1.2);
+}
+
+/* Error message */
+#error-msg {
+  color: red;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Weather Background Styling */
+.weather-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Animations for Clouds */
+@keyframes clouds {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.cloud-animation {
+  position: absolute;
+  top: 20%;
+  left: -20%;
+  width: 120%;
+  height: 100px;
+  background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x;
+  animation: clouds 30s linear infinite;
+}
+
+/* Wind Animation */
+@keyframes wind {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100vw); }
+}
+
+.wind-animation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100vw;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  animation: wind 3s infinite linear;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .weather-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .app-title {
+    font-size: 28px;
+  }
+
+  #location-input, #search-btn {
+    width: 100%;
+  }
+}
